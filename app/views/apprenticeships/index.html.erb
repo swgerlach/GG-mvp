@@ -1,0 +1,21 @@
+<%= link_to "Offer an Apprenticeship", new_apprenticeship_path, :class => 'btn btn-large btn-primary' %>
+
+<% unless @saved_apprenticeships.blank? %>
+<h3>My Saved Apprenticeships</h3>
+<%= render :partial => "apprenticeship", :collection => @saved_apprenticeships || "No saved apprenticeships" %>
+<% end %>
+
+<% unless @pending_apprenticeships.blank? %>
+<h3>My Pending Apprenticeships</h3>
+<%= render :partial => "apprenticeship", :collection => @pending_apprenticeships || "No pending apprenticeships" %>
+<% end %>
+
+<% unless @active_apprenticeships.blank? %>
+<h3>My Upcoming Apprenticeships</h3>
+<%= render :partial => "apprenticeship", :collection => @active_apprenticeships || "No saved apprenticeships" %>
+<% end %>
+
+<% unless @apprenticeships.blank? %>
+<h3>All Apprenticeships</h3>
+<%= render :partial => "apprenticeship", :collection => @apprenticeships || "No apprenticeships" %>
+<% end %>
